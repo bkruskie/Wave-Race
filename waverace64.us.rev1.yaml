@@ -31,7 +31,7 @@ options:
   asm_data_macro: dlabel
   data_string_guesser_level: 2
   rodata_string_guesser_level: 2
-  migrate_rodata_to_functions: True
+  migrate_rodata_to_functions: False
   disasm_unknown: True
   create_asm_dependencies: True
   ld_dependencies: True
