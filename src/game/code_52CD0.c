@@ -1878,7 +1878,9 @@ Gfx* func_8009D96C(Gfx* gdl, s32 index, f32 arg2) {
     gSPMatrix(gdl++, &D_6000000->unk5D0[D_801D06B8++], G_MTX_PUSH | G_MTX_MUL | G_MTX_MODELVIEW);
     return gdl;
 }
-
+#else
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_8009D96C.s")
+#endif
 #else
 #pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_8009D96C.s")
 #endif
