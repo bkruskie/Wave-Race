@@ -528,7 +528,7 @@ void func_8009917C(Vec3f* arg0, Vec3f* arg1, Vec3f* arg2, Vec3f* arg3) {
     arg0->z = (arg1->z + (sp24.vec1.z * COS((s32) ((arg3->y / 360.0f) * 4096.0f)))) -
               (SIN((s32) ((arg3->y / 360.0f) * 4096.0f)) * sp24.vec1.x);
 }
-#ifdef NEEDS_RODATA
+
 void func_8009934C(f32 t, Vec3f* arg1, f32* arg2, f32* arg3, f32* arg4, f32* arg5, f32* arg6);
 
 #ifdef NEEDS_RODATA
@@ -1835,8 +1835,7 @@ Gfx* func_8009D6B0(Gfx* gdl, s32 arg1) {
 Gfx* func_8009D96C(Gfx* gdl, s32 index, f32 arg2);
 
 #ifdef NEEDS_RODATA
-// Matched but needs rodata migration
-#ifdef NEEDS_RODATA
+
 Gfx* func_8009D96C(Gfx* gdl, s32 index, f32 arg2) {
     StructVarS0* v0;
     f32 var_fa1;
