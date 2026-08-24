@@ -549,7 +549,9 @@ void func_8009934C(f32 t, Vec3f* arg1, f32* arg2, f32* arg3, f32* arg4, f32* arg
     arg1->z = (b[0] * arg3[2]) + (b[1] * arg4[2]) + (b[2] * arg5[2]) + (b[3] * arg6[2]);
     *arg2 = (b[0] * arg3[3]) + (b[1] * arg4[3]) + (b[2] * arg5[3]) + (b[3] * arg6[3]);
 }
-
+#else
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_8009934C.s")
+#endif
 #else
 #pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_8009934C.s")
 #endif
