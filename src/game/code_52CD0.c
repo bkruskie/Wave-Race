@@ -529,6 +529,10 @@ void func_8009917C(Vec3f* arg0, Vec3f* arg1, Vec3f* arg2, Vec3f* arg3) {
               (SIN((s32) ((arg3->y / 360.0f) * 4096.0f)) * sp24.vec1.x);
 }
 
+void func_8009934C(f32 t, Vec3f* arg1, f32* arg2, f32* arg3, f32* arg4, f32* arg5, f32* arg6);
+
+#ifdef NEEDS_RODATA
+
 void func_8009934C(f32 t, Vec3f* arg1, f32* arg2, f32* arg3, f32* arg4, f32* arg5, f32* arg6) {
     f32 b[4];
 
@@ -545,6 +549,10 @@ void func_8009934C(f32 t, Vec3f* arg1, f32* arg2, f32* arg3, f32* arg4, f32* arg
     arg1->z = (b[0] * arg3[2]) + (b[1] * arg4[2]) + (b[2] * arg5[2]) + (b[3] * arg6[2]);
     *arg2 = (b[0] * arg3[3]) + (b[1] * arg4[3]) + (b[2] * arg5[3]) + (b[3] * arg6[3]);
 }
+
+#else
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_8009934C.s")
+#endif
 
 s32 func_80099514(s32 arg0, s32 arg1, UnkStruct_801CED60* arg2, s16* arg3, f32* arg4) {
     s32 sp9C;
@@ -1809,6 +1817,10 @@ void func_8009D5C0(void) {
 
 #pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_8009D6B0.s")
 
+Gfx* func_8009D96C(Gfx* gdl, s32 index, f32 arg2);
+
+#ifdef NEEDS_RODATA
+
 Gfx* func_8009D96C(Gfx* gdl, s32 index, f32 arg2) {
     StructVarS0* v0;
     f32 var_fa1;
@@ -1849,6 +1861,10 @@ Gfx* func_8009D96C(Gfx* gdl, s32 index, f32 arg2) {
     gSPMatrix(gdl++, &D_6000000->unk5D0[D_801D06B8++], G_MTX_PUSH | G_MTX_MUL | G_MTX_MODELVIEW);
     return gdl;
 }
+
+#else
+#pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_8009D96C.s")
+#endif
 
 Gfx* func_8009D96C(Gfx*, s32, f32);
 
