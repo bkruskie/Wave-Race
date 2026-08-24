@@ -1835,7 +1835,8 @@ Gfx* func_8009D6B0(Gfx* gdl, s32 arg1) {
 Gfx* func_8009D96C(Gfx* gdl, s32 index, f32 arg2);
 
 #ifdef NEEDS_RODATA
-
+// Matched but needs rodata migration
+#ifdef NEEDS_RODATA
 Gfx* func_8009D96C(Gfx* gdl, s32 index, f32 arg2) {
     StructVarS0* v0;
     f32 var_fa1;
