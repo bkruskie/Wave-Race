@@ -204,7 +204,7 @@ Gfx* func_800A2308(Gfx*, s32);
 Gfx* func_800A28F4(Gfx*, s32);
 s32 func_800ADC8C(s32);
 void func_800ADD14(void);
-void func_800A2B24(s32);
+s32 func_800A2B24(s32);
 // File declarations
 void func_8009A97C(UnkStruct_801CF060* arg0);
 void func_8009A4DC(UnkStruct_801CF060* arg0);
@@ -1815,7 +1815,22 @@ void func_8009D5C0(void) {
     }
 }
 
+Gfx* func_8009D6B0(Gfx* gdl, s32 arg1);
+
+#ifdef NEEDS_RODATA
+Gfx* func_8009D6B0(Gfx* gdl, s32 arg1) {
+    UNUSED s32 pad;
+    s32 sp18;
+
+    sp18 = D_801CE774;
+    gSPDisplayList(gdl++, D_800E6CA0);
+    gdl = func_8009D96C(gdl++, arg1, 0.1f);
+    gSPDisplayList(gdl++, D_801CE798[sp18].unk0);
+    return gdl;
+}
+#else
 #pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_8009D6B0.s")
+#endif
 
 Gfx* func_8009D96C(Gfx* gdl, s32 index, f32 arg2);
 
@@ -2028,7 +2043,52 @@ Gfx* func_800A28F4(Gfx* gdl, s32 arg1) {
     return gdl;
 }
 
+s32 func_800A2B24(s32 arg0);
+
+#ifdef NEEDS_RODATA
+s32 func_800A2B24(s32 arg0) {
+    s32 var_v0;
+
+    var_v0 = D_801D06B8;
+    switch (arg0) {
+        case 1:
+            var_v0 += 8;
+            break;
+        case 2:
+            var_v0++;
+            break;
+        case 3:
+            var_v0 += 8;
+            break;
+        case 4:
+            var_v0++;
+            break;
+        case 5:
+            var_v0 += 6;
+            break;
+        case 6:
+            var_v0 += 6;
+            break;
+        case 7:
+            var_v0 += 4;
+            break;
+        case 8:
+            var_v0 += 4;
+            break;
+        case 9:
+            var_v0 += 4;
+            break;
+        case 10:
+            var_v0 += 4;
+            break;
+        case 12:
+            var_v0 += 1;
+    }
+    return var_v0;
+}
+#else
 #pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_800A2B24.s")
+#endif
 
 #pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_800A52D8.s")
 
@@ -2490,7 +2550,16 @@ void func_800AB92C(void) {
 
 #pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_800AC098.s")
 
+void func_800AC184(void);
+
+#ifdef NEEDS_RODATA
+void func_800AC184(void) {
+    // Placeholder for rodata migration - jtbl_800EBA10 at A5E00+
+    // Full C implementation needed for rodata migration
+}
+#else
 #pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_800AC184.s")
+#endif
 
 void func_800AD3C4(void) {
     switch (gCourseID) {
@@ -2505,7 +2574,16 @@ void func_800AD3C4(void) {
     }
 }
 
+void func_800AD418(void);
+
+#ifdef NEEDS_RODATA
+void func_800AD418(void) {
+    // Placeholder for rodata migration - jtbl_800EBAA4, jtbl_800EBAC8 at A5E00+
+    // Full C implementation needed for rodata migration
+}
+#else
 #pragma GLOBAL_ASM("asm/us/rev1/nonmatchings/game/code_52CD0/func_800AD418.s")
+#endif
 
 #ifdef NEEDS_RODATA
 
